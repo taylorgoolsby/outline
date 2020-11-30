@@ -26,6 +26,24 @@ export function slackAuth(
   return `${baseUrl}?${urlParams}`;
 }
 
+export function discordAuth(state: string): string {
+  const baseUrl = process.env.DISCORD_AUTHORIZE_URL;
+  const params = {
+    response_type: "code",
+    client_id: process.env.DISCORD_CLIENT_ID,
+    scope: "identify email",
+    redirect_uri: `${process.env.URL}/auth/discord.callback`,
+    state,
+    prompt: "consent",
+  };
+
+  const urlParams = Object.keys(params)
+    .map((key) => `${key}=${encodeURIComponent(params[key])}`)
+    .join("&");
+
+  return `${baseUrl}?${urlParams}`;
+}
+
 export function githubUrl(): string {
   return "https://www.github.com/outline";
 }

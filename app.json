@@ -47,6 +47,22 @@
       "description": "See https://developers.google.com/identity/protocols/OAuth2 to create a new Google OAuth client. You must configure at least one of Slack or Google to control login.",
       "required": false
     },
+    "DISCORD_CLIENT_ID": {
+      "description": "",
+      "required": false
+    },
+    "DISCORD_CLIENT_SECRET": {
+      "description": "",
+      "required": false
+    },
+    "DISCORD_AUTHORIZE_URL": {
+      "description": "",
+      "required": false
+    },
+    "DISCORD_TOKEN_URL": {
+      "description": "",
+      "required": false
+    },
     "GOOGLE_CLIENT_SECRET": {
       "description": "",
       "required": false

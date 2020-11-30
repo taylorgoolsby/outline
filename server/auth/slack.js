@@ -20,6 +20,9 @@ router.get("slack", async (ctx) => {
     expires: addHours(new Date(), 1),
     domain: getCookieDomain(ctx.request.hostname),
   });
+
+  console.warn("redirect to: ", slackAuth(state));
+
   ctx.redirect(slackAuth(state));
 });
 
